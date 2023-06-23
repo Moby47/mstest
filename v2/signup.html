@@ -123,5 +123,18 @@
       crossorigin="anonymous"
     ></script>
     
+    <script>
+      window.onload = function(e) {
+        var checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = 'agree';
+        checkbox.name = 'agree';
+        checkbox.value = 'agree';
+        checkbox.required= 'required';
+        var container = document.querySelector('div[ms-lang="pay_agree"]');
+        container.insertBefore(checkbox, container.firstChild);
+        };
+   </script>
+   
   </body>
 </html>
