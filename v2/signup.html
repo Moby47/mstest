@@ -130,11 +130,11 @@
         checkbox.id = 'agree';
         checkbox.name = 'agree';
         checkbox.value = 'agree';
-        checkbox.required= 'required';
-        var container = document.querySelector('div[ms-lang="pay_agree"]');
-        container.insertBefore(checkbox, container.firstChild);
-        };
-   </script>
-   
+        checkbox.required = 'required';
+        var button = document.querySelector('button'); // Replace 'button' with the appropriate selector for your button element
+        button.parentNode.insertBefore(checkbox, button);
+      };
+    </script>
+
   </body>
 </html>
