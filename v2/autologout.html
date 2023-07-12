@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Click After Delay</title>
+
+      <!-- Memberstack webflow package -->
+<script data-memberstack-app="app_cl6avui88003z0ulo9rgd5k4p" src="https://static.memberstack.com/scripts/v1/memberstack.js" type="text/javascript"></script>
+    
+
+</head>
+<body>
+  <button id="myButton" data-ms-action="logout">Click Me</button>
+
+  <script>
+    // Delay function
+    function delay(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    // Function to trigger button click event
+    function clickButton() {
+      document.getElementById("myButton").click();
+      console.log('logout initiated')
+    }
+
+    // Set delay and trigger click event
+    delay(5000).then(clickButton);
+  </script>
+</body>
+</html>
