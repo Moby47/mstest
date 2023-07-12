@@ -9,7 +9,7 @@
 
 </head>
 <body>
-  <button id="myButton" data-ms-action="logout">Click Me</button>
+  
 
   <script>
     // Delay function
@@ -17,14 +17,22 @@
       return new Promise((resolve) => setTimeout(resolve, ms));
     }
 
-    // Function to trigger button click event
-    function clickButton() {
-      document.getElementById("myButton").click();
-      console.log('logout initiated')
+    // Function to perform logout action
+    function performLogoutAction() {
+      console.log("Performing logout action...");
+      // Perform the logout action here
     }
 
-    // Set delay and trigger click event
-    delay(5000).then(clickButton);
+    // Get the action value
+    var action = document.getElementById("myButton").getAttribute("data-ms-action");
+
+    // Set delay and trigger action after the delay
+    delay(5000).then(function() {
+      if (action === "logout") {
+        performLogoutAction();
+      }
+    });
   </script>
+
 </body>
 </html>
