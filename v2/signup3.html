@@ -142,7 +142,7 @@
     </main>
 
    <script>
-  const membershipSelect = document.querySelector(`[id="membership-select"]`);
+const membershipSelect = document.querySelector(`[id="membership-select"]`);
   const form = document.querySelector(`[data-ms-form="signup"]`);
 
   membershipSelect.addEventListener(`change`, (e) => {
@@ -151,13 +151,13 @@
     const desc = select.selectedOptions[0].text;
     console.log("option desc " + desc + " option value " + value);
 
-    // Check the selected option value and update the form attribute accordingly
-    if (value === "prc_paid-try-8v7m01d3") {
-      form.setAttribute("data-ms-price:update", "prc_paid-try-8v7m01d3");
-      form.removeAttribute("data-ms-plan:update");
-    } else if (value === "pln_free-a0250sgj") {
-      form.setAttribute("data-ms-plan:update", "pln_free-a0250sgj");
+    // Check if the value starts with "pln" or "prc" and update the form attribute accordingly
+    if (value.startsWith("pln")) {
       form.removeAttribute("data-ms-price:update");
+      form.setAttribute("data-ms-plan:update", value);
+    } else if (value.startsWith("prc")) {
+      form.removeAttribute("data-ms-plan:update");
+      form.setAttribute("data-ms-price:update", value);
     }
   });
    </script>
